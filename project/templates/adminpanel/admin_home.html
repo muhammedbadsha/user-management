@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static '/css/style.css/' %}">
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <p class="navbar-brand">ADMIN HOME</p>
+          <form action="{% url 'searchuser' %}" method="post" class="d-flex">
+              {% csrf_token %}
+              <input class="form-control me-2" type="search" name="username" placeholder="Search for username" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+            
+            <a class="btn btn-danger" href="{% url 'admin_logout' %}">logout</a>
+            
+        </div>
+    </nav>
+    
+<!-- <form action="{% url 'searchuser' %}"  method="post">
+    {% csrf_token %}
+    <input type="search" name="username" >
+</form> -->
+    <table class="table table-dark"> 
+        
+        <tr>  
+            <th scope="col">username</th>  
+            <th scope="col">email</th>  
+            <th scope="col">password</th>
+            <th></th> 
+            <th></th>  
+            <th><a class="btn btn-info" href="{% url 'adduser' %}">adduser</a></th>        
+
+        </tr> 
+        {% for x in user %}  
+        <tr>  
+            <td>{{x.username}}</td>  
+            <td>{{x.email}}</td>  
+            <td>{{x.password}}</td>
+            <td><a class="btn btn-primary" href="{% url 'viewuser' x.id %}">view</a></td>
+            <td><a class="btn btn-primary" href="{% url 'adminupdate' x.id %}">update</a></td>
+            <td><a class="btn btn-primary" href="{% url 'delete'  x.id %}">delete</a></td>
+
+             
+        </tr>  
+         {% endfor %}
+    </table> 
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

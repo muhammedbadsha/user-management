@@ -1,0 +1,30 @@
+.htag{
+    color: rgb(253, 253, 253);
+    text-align: center;
+}
+.login{
+    color: blue;
+    font-weight: bold;
+}
+.bst{
+    background-color: rgb(133, 88, 88);
+    padding-left: 30em;
+}
+.icls{
+    height: 3em;
+    width: 25em;    
+}
+.btna{
+    text-decoration: none;
+}
+
+a{
+    text-decoration: none;
+    color: aliceblue;
+}
+.main{
+    background-color: black;
+    height: 16em;
+    width: 39em;
+  
+}

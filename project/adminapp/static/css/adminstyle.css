@@ -1,0 +1,26 @@
+.bodyt{
+    background-color: rgb(184, 84, 84);
+    padding-left: 36em;
+
+}
+.inpu{
+    height: 3em;
+    width: 28em;
+}
+.hadl{
+    color: rgb(64, 251, 79);
+    text-align: center;
+}
+.main{
+    width: 36em;
+    height: 18em;
+    background-color: black;
+}
+.latext{
+    color: aliceblue;
+    font-size: 20px;
+    padding-left: 1em;
+}
+.btn{
+   padding-left: 4em ;
+}
